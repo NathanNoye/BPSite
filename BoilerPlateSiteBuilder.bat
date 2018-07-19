@@ -36,23 +36,10 @@ ECHO ^} >> info.json
 REM Creating the primary JS file
 ECHO ^/^/Primary.JS file. Created on %date% for project: %title%>> js/primary.js
 
+ECHO Implement Agile2? Requires GIT as PATH variable and an internet connection.
+SET /p useAgile="Y/N: "
 
-
-ECHO Make sure you are connected to the internet before proceeding and have GIT installed.
-ECHO If not - you can still proceed but without implementing the Agile2 framework.
-PAUSE
-NETSH wlan show interfaces | FINDSTR /c:"Signal" && SET netSts=online || SET netSts=offline
-
-REM ========================================================================================================
-REM ========================================================================================================
-REM SET git=1
-REM DO A CHECK TO SEE IF THE USER HAS GIT INSTALLED. IF NOT - FALL BACK TO THE DEFAULT MAIN.CSS FILE
-REM ========================================================================================================
-REM ========================================================================================================
-
-REM Checking if there is an internet connection. If so - the latest version of Agile2 will download.
-REM If not - the fallback method will create a css dir.
-IF %netSts% == online(
+IF /I %useAgile%==Y (
     REM Getting the latest version of Agile
     git clone https://github.com/NathanNoye/Agile2.git
     CD Agile2
@@ -63,7 +50,6 @@ IF %netSts% == online(
     REM Add link to the agile css stylesheets
     SET cssLink="css/agile.import.css"
 ) ELSE (
-    ECHO  ------- No Connection found. Executing fallback method. -------
     MD css
     ECHO ^* ^{ >> css/main.css
     ECHO    line-height^: 1.6px^; >> css/main.css
@@ -72,6 +58,8 @@ IF %netSts% == online(
     REM Add link to the fallback css
     SET cssLink="css/main.css"
 )
+
+
 
 
 REM Creating the HTML file
