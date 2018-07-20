@@ -68,10 +68,10 @@ IF /I %useAgile%==Y (
 
     REM Add link to the fallback files
     SET cssLink="css/main.css"
-    set scriptLink="js/primary.js"
+    set scriptLink="js/app.js"
 
     REM Add fallback JS
-    ECHO ^/^/Primary.JS file. Created on %date% for project: %title%>> js/primary.js
+    ECHO ^/^/App.JS file. Created on %date% for project: %title%>> js/app.js
 )
 
 
