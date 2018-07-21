@@ -14,3 +14,17 @@ Features
 -Title and description are set for search engines
 
 -super dope af
+
+
+UPDATES
+--------------------
+🎉 LESS LIKELY TO CRASH 🎉
+🎉 PHP SUPPORT 🎉
+🎉 SEO ADDED FOR TITLE AND META/DESCRIPTION TAGS 🎉
+🎉 NOW LINKS TO AUTHOR'S WEBSITE IF CHOSEN🎉
+
+
+
+Known 'Features'
+------------------------
+-Setting the folder destination in the same folder as the bat file will cause it to re-open the bat file instead of the proper folder. New feature to keep you on your toes.
