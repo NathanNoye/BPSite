@@ -14,7 +14,7 @@ ECHO.
 
 SET /p location="Path to project folder: "
 SET /p author="Author: "
-SET /p authorURL="Author website: "
+SET /p authorURL="Author website: https://"
 SET /p projectTitle="Project title: "
 SET /p primaryLanguage="Primary Programming Language: "
 SET /p description="Description: "
@@ -36,6 +36,12 @@ ECHO    "Primary Language"^:"%primaryLanguage%"^, >> info.json
 ECHO    "Date Created"^:"%date%"^, >> info.json
 ECHO    "Description"^:"%description%"^ >> info.json
 ECHO ^} >> info.json
+
+IF [%authorURL%]==[] (
+    SET authorURL=#
+) ELSE (
+    SET authorURL=https://%authorURL%
+)
 
 ECHO Implement Agile2? Requires GIT as PATH variable and an internet connection.
 ECHO Your current network status is %online%
@@ -107,7 +113,7 @@ ECHO    include ^'includes^/footer.php^'^; >> index.php
 ECHO ^?^> >> index.php
 
 REM Footer
-ECHO        ^<footer^>^<a href="https://%authorURL%"^>Site developed by %author%^<^/a^>^</footer^> >> includes/footer.php
+ECHO        ^<footer^>^<a href="%authorURL%"^>Site developed by %author%^<^/a^>^</footer^> >> includes/footer.php
 ECHO        ^<!-- Put JS scripts here --^> >> includes/footer.php
 ECHO        ^<script src=%scriptLink%^>^</script^> >> includes/footer.php
 ECHO    ^</body^> >> includes/footer.php
@@ -155,7 +161,7 @@ ECHO    ^</head^> >> index.html
 ECHO    ^<body^> >> index.html
 ECHO        ^<header^>^</header^> >> index.html
 ECHO        ^<section^>^</section^> >> index.html
-ECHO        ^<footer^>^<a href="https://%authorURL%"^>Site developed by %author%^<^/a^>^</footer^> >> index.html
+ECHO        ^<footer^>^<a href="%authorURL%"^>Site developed by %author%^<^/a^>^</footer^> >> index.html
 ECHO        ^<!-- Put JS scripts here --^> >> index.html
 ECHO        ^<script src=%scriptLink%^>^</script^> >> index.html
 ECHO    ^</body^> >> index.html
