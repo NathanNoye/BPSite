@@ -71,7 +71,7 @@ IF /I %useAgile%==Y (
 
     REM Add fallback CSS
     ECHO ^* ^{ >> css/main.css
-    ECHO    line-height^: 1.6px^; >> css/main.css
+    ECHO    line-height^: 1.8^; >> css/main.css
     ECHO ^} >> css/main.css
 
     REM Add link to the fallback files
