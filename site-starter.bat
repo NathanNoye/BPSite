@@ -113,7 +113,10 @@ ECHO    include ^'includes^/footer.php^'^; >> index.php
 ECHO ^?^> >> index.php
 
 REM Footer
-ECHO        ^<footer^>^<a href="%authorURL%"^>Site developed by %author%^<^/a^>^</footer^> >> includes/footer.php
+ECHO        ^<footer^> >> includes/footer.php
+ECHO            ^<p^>%description%^<^/p^>  >> includes/footer.php
+ECHO            ^<a href="%authorURL%"^>Site developed by %author%^<^/a^> >> includes/footer.php
+ECHO        ^</footer^> >> includes/footer.php
 ECHO        ^<!-- Put JS scripts here --^> >> includes/footer.php
 ECHO        ^<script src=%scriptLink%^>^</script^> >> includes/footer.php
 ECHO    ^</body^> >> includes/footer.php
@@ -161,7 +164,10 @@ ECHO    ^</head^> >> index.html
 ECHO    ^<body^> >> index.html
 ECHO        ^<header^>^</header^> >> index.html
 ECHO        ^<section^>^</section^> >> index.html
-ECHO        ^<footer^>^<a href="%authorURL%"^>Site developed by %author%^<^/a^>^</footer^> >> index.html
+ECHO        ^<footer^> >> index.html
+ECHO            ^<p^>%description%^<^/p^>  >> index.html
+ECHO            ^<a href="%authorURL%"^>Site developed by %author%^<^/a^> >> index.html
+ECHO        ^</footer^> >> index.html
 ECHO        ^<!-- Put JS scripts here --^> >> index.html
 ECHO        ^<script src=%scriptLink%^>^</script^> >> index.html
 ECHO    ^</body^> >> index.html
