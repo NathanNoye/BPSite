@@ -24,7 +24,6 @@ ECHO.
 ECHO.
 
 REM Creating the directories
-MD img
 MD includes
 
 REM Creating the JSON file
@@ -56,16 +55,19 @@ IF /I %useAgile%==Y (
     MOVE css ..
     MOVE fonts ..
     MOVE js ..
+    MOVE img ..
     CD ..
     RMDIR Agile2 /s /q
 
     REM Add link to the agile css stylesheets
     SET cssLink="css/agile.import.css"
-    set scriptLink="js/agile.import.js"
+    SET scriptLink="js/agile.import.js"
+    SET faviconLink="img/agileLogoSM.png"
 ) ELSE (
     MD js
     MD fonts
     MD css
+    MD img
 
     REM Add fallback CSS
     ECHO ^* ^{ >> css/main.css
@@ -74,7 +76,8 @@ IF /I %useAgile%==Y (
 
     REM Add link to the fallback files
     SET cssLink="css/main.css"
-    set scriptLink="js/app.js"
+    SET scriptLink="js/app.js"
+    SET faviconLink=""
 
     REM Add fallback JS
     ECHO ^/^/App.JS file. Created on %date% for project: %title%>> js/app.js
@@ -97,6 +100,7 @@ ECHO        ^<title^>%projectTitle%^</title^> >>includes/header.php
 ECHO        ^<meta charset="utf-8"^> >> includes/header.php
 ECHO        ^<meta name="viewport" content="width=device-width, initial-scale=1.0"^> >> includes/header.php
 ECHO        ^<meta name="description" content="%description%"^> >> includes/header.php
+ECHO        ^<link rel="icon" type="image/png" href=%faviconLink%^> >> includes/header.php
 ECHO        ^<link rel="stylesheet" type="text/css" href=%cssLink%^> >> includes/header.php
 ECHO    ^</head^> >> includes/header.php
 ECHO    ^<body^> >> includes/header.php
@@ -159,6 +163,7 @@ ECHO        ^<title^>%projectTitle%^</title^> >>index.html
 ECHO        ^<meta charset="utf-8"^> >> index.html
 ECHO        ^<meta name="viewport" content="width=device-width, initial-scale=1.0"^> >> index.html
 ECHO        ^<meta name="description" content="%description%"^> >> index.html
+ECHO        ^<link rel="icon" type="image/png" href=%faviconLink%^> >> index.html
 ECHO        ^<link rel="stylesheet" type="text/css" href=%cssLink%^> >> index.html
 ECHO    ^</head^> >> index.html
 ECHO    ^<body^> >> index.html
