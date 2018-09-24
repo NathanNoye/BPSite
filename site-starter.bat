@@ -9,7 +9,7 @@ TITLE Agile2 Site generator
 
 ECHO ====================================================
 ECHO                - Website Builder -
-ECHO                  Version 1.3.0
+ECHO                  Version 1.2.0
 ECHO ====================================================
 ECHO.
 
@@ -99,7 +99,6 @@ ECHO ^<html lang="en"^> >> includes/header.php
 ECHO    ^<head^> >> includes/header.php
 ECHO        ^<meta charset="utf-8"^> >> includes/header.php
 ECHO        ^<title^>%projectTitle%^</title^> >>includes/header.php
-ECHO        ^<base href="/"^> >>includes/header.php
 ECHO        ^<meta name="viewport" content="width=device-width, initial-scale=1.0"^> >> includes/header.php
 ECHO        ^<meta name="description" content="%description%"^> >> includes/header.php
 ECHO        ^<link rel="icon" type="image/png" href=%faviconLink%^> >> includes/header.php
@@ -163,7 +162,6 @@ ECHO ^<html lang="en"^> >> index.html
 ECHO    ^<head^> >> index.html
 ECHO        ^<meta charset="utf-8"^> >> index.html
 ECHO        ^<title^>%projectTitle%^</title^> >>index.html
-ECHO        ^<base href="/"^> >>index.html
 ECHO        ^<meta name="viewport" content="width=device-width, initial-scale=1.0"^> >> index.html
 ECHO        ^<meta name="description" content="%description%"^> >> index.html
 ECHO        ^<link rel="icon" type="image/png" href=%faviconLink%^> >> index.html
