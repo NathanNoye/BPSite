@@ -9,7 +9,7 @@ TITLE Agile2 Site generator
 
 ECHO ====================================================
 ECHO                - Website Builder -
-ECHO                  Version 1.2.0
+ECHO                  Version 1.3.0
 ECHO ====================================================
 ECHO.
 
