@@ -17,7 +17,7 @@ SET /p location="Path to project folder: "
 SET /p author="Author: "
 SET /p authorURL="Author website: https://"
 SET /p projectTitle="Project title: "
-SET /p primaryLanguage="Primary Programming Language: "
+SET /p primaryLanguage="Server Side Programming Language: "
 SET /p description="Description: "
 
 CD %location%
